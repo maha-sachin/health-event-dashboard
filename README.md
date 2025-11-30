@@ -218,7 +218,9 @@ The application currently runs with realistic mock data including:
 
 ### 📸 Screenshots & Walkthrough
 
-> **Note**: Screenshots can be added by running the application locally and capturing the interface
+![AWS Health Events Dashboard](screenshots/dashboard-main.png)
+
+> **Screenshot**: Live dashboard running on localhost:5173 showing the actual interface with 5 sample health events
 
 #### **Main Dashboard**
 
@@ -227,22 +229,73 @@ The application currently runs with realistic mock data including:
 📱 View: Desktop/Tablet/Mobile responsive
 ```
 
-**What you'll see:**
+**What you'll see in the live screenshot:**
 
-- Header with dashboard title and real-time status
-- Four status cards showing key metrics
-- Interactive filter bar with multiple options
-- Comprehensive events table with sortable columns
-- Clean, professional dark theme interface
+#### **📊 Status Cards (Top Row)**
 
-#### **Filter & Search Demo**
+- **ACTION REQUIRED**: 0 events - All clear ✅
+- **OPEN ISSUES**: 0 events - System healthy ✅
+- **SCHEDULED CHANGES**: 0 events - None scheduled ✅
+- **NOTIFICATIONS**: 0 events - No alerts ✅
+
+#### **🔍 Interactive Filter Bar**
+
+- **Search Box**: "Search event, service, region, ARN..."
+- **Actionability Filter**: All Actionability (dropdown)
+- **Category Filter**: All Categories (dropdown)
+- **Service Filter**: All Services (dropdown)
+- **Region Filter**: All Regions (dropdown)
+- **Environment Filter**: All Environments (dropdown)
+
+#### **📋 Events Table (5 Events Displayed)**
+
+Real data from your running application:
+
+| Service    | Region         | Event Category | Status        | Last Update       |
+| ---------- | -------------- | -------------- | ------------- | ----------------- |
+| **EC2**    | us-east-1      | Issue          | Informational | Nov 30 2025 18:19 |
+| **ECS**    | ap-southeast-1 | Issue          | Informational | Nov 30 2025 17:49 |
+| **LAMBDA** | us-east-1      | Issue          | Informational | Nov 30 2025 16:49 |
+| **S3**     | eu-west-1      | Issue          | Informational | Nov 30 2025 10:49 |
+| **RDS**    | us-west-2      | Issue          | Informational | Nov 29 2025 18:49 |
+
+#### **🎨 Visual Design Elements**
+
+- **Dark Theme**: Professional navy blue background
+- **Purple Branding**: AWS Health logo with purple accent color
+- **Status Indicators**: Color-coded badges and icons
+- **Real-time Updates**: Timestamp showing "Last updated 18:49:29"
+- **Modern Typography**: Clean, readable fonts throughout
+- **Responsive Layout**: Optimized for desktop viewing
+
+#### **🎮 Interactive Demo Guide**
+
+**Try these live interactions:**
+
+```bash
+# Start the application
+npm run dev
+# Open http://localhost:5173 in your browser
+```
+
+**🔍 Search & Filter Examples:**
 
 ```
-🔍 Try these interactions:
-• Search: "EC2" - Shows only EC2-related events
-• Region: Select "us-east-1" - Filters by region
-• Service: Choose "Lambda" - Shows Lambda events
-• Status: Pick "Open" - Active events only
+• Search: "EC2" → Shows only EC2-related events (1 result)
+• Search: "us-east-1" → Shows events in US East region (2 results)
+• Region Filter: Select "us-east-1" → Filters to US East events
+• Service Filter: Choose "Lambda" → Shows Lambda-specific events
+• Category Filter: Pick "Issue" → Shows only issue-type events
+• Combined Filters: Search "Lambda" + Region "us-east-1" → Specific results
+```
+
+**📋 Table Interactions:**
+
+```
+• Sort: Click column headers to sort by Service, Region, Status, etc.
+• Row Details: Click any event row to see expanded information
+• View Toggle: Switch between "List" and "By Account" views
+• Refresh: Click refresh button to update timestamps
 ```
 
 #### **Event Details**
@@ -253,6 +306,29 @@ The application currently runs with realistic mock data including:
 • Affected resource details
 • Actionability status and recommendations
 • Last updated timestamp
+```
+
+#### **📸 Capturing Your Own Screenshots**
+
+**To save the screenshot shown above:**
+
+1. Right-click the screenshot above and select "Save Image As..."
+2. Save as `dashboard-main.png` in the `screenshots/` directory
+
+**To capture new screenshots:**
+
+```bash
+# 1. Ensure the app is running
+npm run dev
+
+# 2. Open http://localhost:5173 in your browser
+# 3. Take screenshots of different views:
+#    - Main dashboard (current view)
+#    - Filtered results (apply some filters)
+#    - Mobile view (resize browser)
+#    - Different themes or layouts
+
+# 4. Save screenshots in the screenshots/ directory with descriptive names
 ```
 
 ### 🎯 Use Cases & FinOps Benefits
