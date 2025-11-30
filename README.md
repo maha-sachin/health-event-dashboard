@@ -42,7 +42,30 @@ health-event-dashboard/
 
 ## 🚀 Quick Start
 
-### Frontend Development
+### Prerequisites
+
+- Node.js 18+ (recommended: use nvm)
+- npm or yarn package manager
+- Git
+
+### Running the Application Locally
+
+#### 1. Clone the Repository
+
+```bash
+git clone https://github.com/maha-sachin/health-event-dashboard.git
+cd health-event-dashboard
+```
+
+#### 2. Setup Node.js (if using nvm)
+
+```bash
+nvm use 18
+# or install if not available
+nvm install 18 && nvm use 18
+```
+
+#### 3. Install Dependencies and Run Frontend
 
 ```bash
 cd frontend
@@ -50,14 +73,34 @@ npm install
 npm run dev
 ```
 
-### Backend Deployment
+🎉 **The application will be available at: http://localhost:5173**
+
+### Other Available Commands
+
+```bash
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run linting
+npm run lint
+
+# Fix linting issues
+npm run lint:fix
+```
+
+### Backend Deployment (Future)
 
 ```bash
 cd backend
 ./deployment/deploy.sh dev
 ```
 
-## 🎯 Features
+## 📱 Application Demo
+
+### 🎯 Key Features
 
 - **Real-time Health Monitoring**: Live AWS service health events
 - **Multi-Account Support**: Monitor health across AWS organization
@@ -65,6 +108,252 @@ cd backend
 - **Interactive Dashboard**: Filter, search, and drill-down capabilities
 - **Responsive Design**: Works on desktop and mobile
 - **Serverless Architecture**: Scalable and cost-effective
+
+### 🖥️ Dashboard Overview
+
+The main dashboard provides a comprehensive view of your AWS infrastructure health:
+
+#### **Header & Navigation**
+
+- **Title**: "AWS Health Events Dashboard"
+- **Subtitle**: "Multi-Account Infrastructure Health Monitoring | Real-time Service Status & Cost Impact Analysis"
+- **Real-time Updates**: Last updated timestamp with refresh button
+- **Account Info**: Current user and environment context
+
+#### **Status Cards**
+
+- **📊 Total Events**: Overall count of health events
+- **🚨 Critical Incidents**: High-priority events requiring attention
+- **⚠️ Active Warnings**: Ongoing issues and advisories
+- **📈 Affected Resources**: Total AWS resources impacted
+
+#### **Interactive Filters**
+
+- **🔍 Search**: Quick text search across events
+- **🌍 Regions**: Filter by AWS regions (us-east-1, us-west-2, eu-west-1, etc.)
+- **🛠️ Services**: Filter by AWS services (EC2, RDS, S3, Lambda, ECS, etc.)
+- **📋 Categories**: Event types (issue, scheduledChange, accountNotification)
+- **⏰ Status**: Event status (open, upcoming, closed)
+- **🏢 Environment**: Development, staging, production
+- **🎯 Actionability**: Events requiring immediate action
+
+#### **Events Table**
+
+- **Event Details**: Service, region, event type, and description
+- **Timeline**: Start time, end time, last updated
+- **Status Indicators**: Color-coded badges for quick identification
+- **Impact Level**: Severity and scope indicators
+- **Action Required**: Actionability status for FinOps teams
+
+#### **View Modes**
+
+- **📋 Table View**: Detailed list with sortable columns
+- **🏢 Account Group View**: Organized by AWS account structure
+- **🔍 Detail View**: Expanded information for selected events
+
+### 🎨 UI/UX Highlights
+
+#### **Modern Design System**
+
+- **Dark Theme**: Professional dark interface optimized for monitoring
+- **Tailwind CSS**: Responsive, utility-first styling
+- **Radix UI**: Accessible, high-quality component library
+- **Consistent Icons**: Lucide React icons throughout
+
+#### **Responsive Layout**
+
+- **Desktop**: Full-featured dashboard with sidebar navigation
+- **Tablet**: Optimized layout with collapsible components
+- **Mobile**: Touch-friendly interface with drawer navigation
+
+#### **Interactive Elements**
+
+- **Real-time Data**: Auto-refresh every 60 seconds
+- **Smooth Animations**: Framer Motion transitions
+- **Loading States**: Skeleton screens during data fetching
+- **Empty States**: Helpful messaging when no data available
+
+### 🔄 Mock Data for Development
+
+The application currently runs with realistic mock data including:
+
+#### **Sample Health Events**
+
+1. **EC2 Operational Issue** (us-east-1) - Open
+
+   - Investigating connectivity issues affecting some instances
+   - 2 affected EC2 instances
+   - Started 2 hours ago
+
+2. **RDS Maintenance Scheduled** (us-west-2) - Upcoming
+
+   - Planned maintenance with potential brief downtime
+   - 1 affected RDS database
+   - Scheduled for tomorrow
+
+3. **S3 Service Degradation** (eu-west-1) - Closed
+
+   - Resolved service degradation
+   - 2 affected S3 buckets
+   - Duration: 4 hours (resolved 8 hours ago)
+
+4. **Lambda Error Rates** (us-east-1) - Closed
+
+   - Increased error rates resolved
+   - Multiple Lambda functions affected
+   - Duration: 4 hours (resolved 2 hours ago)
+
+5. **ECS Security Notification** (ap-southeast-1) - Open
+   - Security advisory for task definitions
+   - Account-specific notification
+   - Requires review and action
+
+### 🚀 Getting Started Experience
+
+1. **Clone & Install**: One command setup with npm install
+2. **Instant Preview**: Runs immediately with mock data
+3. **No AWS Setup Required**: Perfect for development and demo
+4. **Hot Reload**: Vite provides instant updates during development
+5. **Modern Developer Experience**: ESLint, Prettier, TypeScript support
+
+### 📸 Screenshots & Walkthrough
+
+> **Note**: Screenshots can be added by running the application locally and capturing the interface
+
+#### **Main Dashboard**
+
+```
+🔗 URL: http://localhost:5173/
+📱 View: Desktop/Tablet/Mobile responsive
+```
+
+**What you'll see:**
+
+- Header with dashboard title and real-time status
+- Four status cards showing key metrics
+- Interactive filter bar with multiple options
+- Comprehensive events table with sortable columns
+- Clean, professional dark theme interface
+
+#### **Filter & Search Demo**
+
+```
+🔍 Try these interactions:
+• Search: "EC2" - Shows only EC2-related events
+• Region: Select "us-east-1" - Filters by region
+• Service: Choose "Lambda" - Shows Lambda events
+• Status: Pick "Open" - Active events only
+```
+
+#### **Event Details**
+
+```
+📋 Click any event row to see:
+• Full event description and timeline
+• Affected resource details
+• Actionability status and recommendations
+• Last updated timestamp
+```
+
+### 🎯 Use Cases & FinOps Benefits
+
+#### **For FinOps Teams**
+
+- **Cost Impact Monitoring**: Track service disruptions affecting billing
+- **Multi-Account Oversight**: Centralized health view across AWS organization
+- **Proactive Planning**: Scheduled maintenance visibility for capacity planning
+- **Incident Response**: Quick identification of cost-impacting outages
+
+#### **For DevOps Teams**
+
+- **Real-time Alerting**: Immediate visibility into AWS service health
+- **Regional Monitoring**: Multi-region deployment health tracking
+- **Service Dependencies**: Understanding upstream/downstream impact
+- **Maintenance Planning**: Coordinate deployments around AWS maintenance
+
+#### **For Management**
+
+- **Executive Dashboard**: High-level infrastructure health overview
+- **SLA Monitoring**: Track AWS service availability against commitments
+- **Risk Assessment**: Identify patterns in service disruptions
+- **Cost Optimization**: Correlate health events with spend anomalies
+
+## 🚀 Next Steps & Production Deployment
+
+### 🔧 Backend Implementation
+
+```bash
+# TODO: Implement Lambda functions
+backend/functions/
+├── get-health-events/     # Fetch AWS Health events
+├── get-organizations/     # Get AWS Organization data
+├── process-notifications/ # Handle Health API webhooks
+└── aggregate-metrics/     # Calculate dashboard metrics
+```
+
+### 🌐 Production Checklist
+
+#### **Infrastructure Setup**
+
+- [ ] Deploy API Gateway with proper CORS and authentication
+- [ ] Create Lambda functions with appropriate IAM roles
+- [ ] Set up CloudWatch monitoring and alerting
+- [ ] Configure environment-specific configurations
+
+#### **Security & Access**
+
+- [ ] Implement proper authentication (AWS Cognito/OIDC)
+- [ ] Set up least-privilege IAM policies for Health API access
+- [ ] Enable AWS CloudTrail for API auditing
+- [ ] Configure rate limiting and DDoS protection
+
+#### **Frontend Production Build**
+
+- [ ] Update API endpoints to use API Gateway URLs
+- [ ] Configure environment variables for different stages
+- [ ] Set up CloudFront distribution for global delivery
+- [ ] Enable compression and caching optimization
+
+#### **Monitoring & Observability**
+
+- [ ] Set up AWS X-Ray for distributed tracing
+- [ ] Configure CloudWatch dashboards for application metrics
+- [ ] Implement health checks and uptime monitoring
+- [ ] Set up alerting for critical failures
+
+### 🎯 Feature Roadmap
+
+#### **Phase 1: Core Functionality**
+
+- ✅ Mock dashboard with realistic data
+- ✅ Responsive UI with filtering capabilities
+- ✅ Modern React component architecture
+- ⏳ AWS Health API integration via Lambda
+
+#### **Phase 2: Enhanced FinOps**
+
+- ⏳ Cost impact correlation with AWS Billing API
+- ⏳ Multi-account organization support
+- ⏳ Historical trend analysis and reporting
+- ⏳ Custom alerting rules and notifications
+
+#### **Phase 3: Advanced Features**
+
+- ⏳ Real-time WebSocket updates
+- ⏳ Custom dashboard layouts and views
+- ⏳ Integration with ITSM tools (ServiceNow, Jira)
+- ⏳ Mobile app for on-call engineers
+
+### 📞 Support & Contribution
+
+For questions, feature requests, or contributions:
+
+1. **Development**: Run locally with mock data for rapid iteration
+2. **Testing**: Use the comprehensive test data to validate UI changes
+3. **Documentation**: Update README and inline comments as features evolve
+4. **Deployment**: Follow AWS best practices for serverless applications
+
+**Ready to get started?** The application is fully functional in development mode - clone the repo and run `npm run dev` to begin exploring! 🚀
 
 ## 🔧 Technology Stack
 
